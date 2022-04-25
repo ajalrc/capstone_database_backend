@@ -40,7 +40,7 @@ recordRoutes.route("/record/add").post(function (req, response) {
     capstone: req.body.capstone,
     group_names: req.body.group_names,
     description: req.body.description,
-    presentation_link: req.body.presentation_link,
+    presentation_link: req.body.presentation_link
   };
   db_connect.collection("records").insertOne(myobj, function (err, res) {
     if (err) throw err;
@@ -57,7 +57,7 @@ recordRoutes.route("/update/:id").post(function (req, response) {
       capstone: req.body.capstone,
       group_names: req.body.group_names,
       description: req.body.description,
-      presentation_link: req.body.presentation_link,
+      presentation_link: req.body.presentation_link
     },
   };
   db_connect
@@ -81,4 +81,3 @@ recordRoutes.route("/:id").delete((req, response) => {
 });
 
 module.exports = recordRoutes;
-//Capstone_database_MERN_Stack
