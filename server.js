@@ -8,9 +8,9 @@ app.use(express.json());
 app.use(require("./routes/record"));
 // get driver connection
 const dbo = require("./db/conn");
-const rounter = express.Router();
+const router = express.Router();
 
-rounter.get("/", (req, res) => {
+router.get("/", (req, res) => {
   res.send(`Hello world from the server backend.`);
 });
 
