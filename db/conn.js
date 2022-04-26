@@ -1,12 +1,9 @@
-
 const { MongoClient } = require("mongodb");
-const mongoose  = require("mongoose");
 const Db = process.env.ATLAS_URI;
 const client = new MongoClient(Db, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
-const { GridFsStorage } = require("multer-gridfs-storage");
 var _db;
 
 module.exports = {
