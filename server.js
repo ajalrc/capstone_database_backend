@@ -9,6 +9,12 @@ app.use(require("./routes/record"));
 // get driver connection
 const dbo = require("./db/conn");
 
+app.use(express.static("./build"));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "build", "index.html"));
+});
+
 app.listen(port, () => {
   // perform a database connection when server starts
   dbo.connectToServer(function (err) {
